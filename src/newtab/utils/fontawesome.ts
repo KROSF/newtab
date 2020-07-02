@@ -7,6 +7,8 @@ import {
   faYoutube,
   faTwitter,
   faReddit,
+  faDev,
+  faDocker,
 } from "@fortawesome/free-brands-svg-icons";
 
 const initFontAwesome = () => {
@@ -17,7 +19,9 @@ const initFontAwesome = () => {
     faAmazon,
     faYoutube,
     faTwitter,
-    faReddit
+    faReddit,
+    faDev,
+    faDocker
   );
 };
 

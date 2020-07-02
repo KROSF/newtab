@@ -25,23 +25,28 @@ const Form = styled(Flex)`
 `;
 
 const engineIcons: Record<string, IconName> = {
-  yt: "youtube",
+  az: "amazon",
+  dev: "dev",
+  dh: "docker",
   gh: "github",
   rd: "reddit",
   tw: "twitter",
-  az: "amazon",
+  yt: "youtube",
 };
 
 const Search = () => {
+  const [query, setQuery] = useState("");
   const [engine, setEngine] = useState<IconName>("google");
 
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    setEngine(engineIcons[event.target.value.substr(0, 2)] || "google");
+    const { value } = event.target;
+    setQuery(value);
+    setEngine(engineIcons[value.substr(0, value.indexOf(" "))] || "google");
   }, []);
 
   return (
-    <Form as="form" alignItems="center">
-      <SearchInput onChange={onChange} />
+    <Form as="form" alignItems="center" action="http://localhost:8000/search">
+      <SearchInput onChange={onChange} name="q" />
       <Box paddingRight="10px">
         <FontAwesomeIcon icon={["fab", engine]} size="2x" />
       </Box>
