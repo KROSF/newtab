@@ -1,0 +1,21 @@
+{
+  "name": "newtab",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "192": "assets/icons/icon192.png",
+    "512": "assets/icons/icon512.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+  },
+  "permissions": ["downloads"],
+  "web_accessible_resources": ["assets/icons/*.png"],
+  "background": {
+    "scripts": ["background/index.js"],
+    "persistent": false
+  }
+}
