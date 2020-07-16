@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "newtab settings",
+  "type": "object",
+  "properties": {
+    "downloads.rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "matchers": {
+            "type": "object",
+            "properties": {
+              "mime": {
+                "type": "string"
+              },
+              "referer": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "finalUrl": {
+                "type": "string"
+              },
+              "filename": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "anyOf": [
+              { "required": ["mime"] },
+              { "required": ["referer"] },
+              { "required": ["url"] },
+              { "required": ["finalUrl"] },
+              { "required": ["filename"] }
+            ]
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": ["matchers", "pattern", "enabled"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["downloads.rules"]
+}

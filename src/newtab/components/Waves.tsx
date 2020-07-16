@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { Keyframes } from "@emotion/serialize";
+import { Box } from "rebass";
 
 type WaveProps = {
   bottom: string;
@@ -31,7 +32,7 @@ const animation2 = keyframes`
 `;
 
 const Wave = styled.div<WaveProps>`
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100%;
   height: 100px;
@@ -47,7 +48,7 @@ const Wave = styled.div<WaveProps>`
 `;
 
 const Waves = () => (
-  <div>
+  <Box sx={{ gridArea: "5 / 2 / 6 / 6" }}>
     <Wave
       z={1000}
       opacity={1}
@@ -80,7 +81,7 @@ const Waves = () => (
       animation={animation2}
       frequency="5s"
     />
-  </div>
+  </Box>
 );
 
 export default Waves;

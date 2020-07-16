@@ -21,7 +21,7 @@ const Form = styled(Flex)`
   width: 450px;
   border-radius: 5px;
   margin-bottom: 80px;
-  background-color: #202124;
+  background-color: #363637;
 `;
 
 const engineIcons: Record<string, IconName> = {

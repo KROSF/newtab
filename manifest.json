@@ -1,6 +1,6 @@
 {
   "name": "newtab",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "",
   "icons": {
@@ -12,8 +12,14 @@
   "chrome_url_overrides": {
     "newtab": "newtab/index.html"
   },
-  "permissions": ["downloads"],
+  "permissions": [
+    "downloads",
+    "storage",
+    "https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/loader.js"
+  ],
   "web_accessible_resources": ["assets/icons/*.png"],
+  "options_page": "options/index.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-OPgb/t1RU5dpys3MegyL3+PUjkot4LKPH9f522BKX00=' https://cdn.jsdelivr.net; object-src 'self'; worker-src blob",
   "background": {
     "scripts": ["background/index.js"],
     "persistent": false

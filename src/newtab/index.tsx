@@ -208,8 +208,8 @@ const globalStyles = css`
   }
 
   body {
-    background-color: #35363a;
-    color: white;
+    background-color: #191919;
+    color: rgb(247, 241, 255);
     margin: 0;
   }
 
