@@ -119,3 +119,9 @@ if (!currentVersion || currentVersion != version) {
   localStorage.setItem("version", version);
   chrome.tabs.create({ url: "options/index.html" });
 }
+
+chrome.browserAction.onClicked.addListener((tab) => {
+  if (tab.id) {
+    chrome.tabs.executeScript(tab.id, { file: "background/bookmarklet.js" });
+  }
+});

@@ -45,7 +45,7 @@ const Search = () => {
   }, []);
 
   return (
-    <Form as="form" alignItems="center" action="http://localhost:8000/search">
+    <Form as="form" alignItems="center" action="http://sse.local.host/search">
       <SearchInput onChange={onChange} name="q" />
       <Box paddingRight="10px">
         <FontAwesomeIcon icon={["fab", engine]} size="2x" />

@@ -21,7 +21,7 @@
   "options_page": "options/index.html",
   "content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-OPgb/t1RU5dpys3MegyL3+PUjkot4LKPH9f522BKX00=' https://cdn.jsdelivr.net; object-src 'self'; worker-src blob",
   "background": {
-    "scripts": ["background/index.js"],
+    "scripts": ["background/index.js", "background/bookmarklet.js"],
     "persistent": false
   }
 }

@@ -5,11 +5,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:bg": "parcel build src/background/index.ts --dist-dir dist/background",
+    "build:bg": "parcel build src/background/bookmarklet.ts --dist-dir dist/background",
+    "build:bookmarklet": "parcel build src/background/index.ts --dist-dir dist/background",
     "build:options": "parcel build src/options/index.html --dist-dir dist/options --public-url ./",
     "build:newtab": "parcel build src/newtab/index.html --dist-dir dist/newtab --public-url ./",
     "copy:static": "copy manifest.json assets/**/* assets/* dist",
-    "build": "run-s build:newtab build:bg build:options",
+    "build": "run-s build:newtab build:bg build:bookmarklet build:options",
     "clean": "rimraf dist",
     "dist": "run-s clean build copy:static"
   },
